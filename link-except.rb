@@ -1,4 +1,4 @@
-#!/opt/local/bin/ruby
+#!/usr/bin/env ruby
 
 require 'pathname'
 
@@ -11,12 +11,13 @@ class Pathname
 	end
 end
 
-if (ARGV[0] == '-h')
-	ARGV.shift
-	def link(from,to); to.make_link(from); end
-else
-	def link(from,to); to.make_symlink(from); end
-end
+def link(from,to); to.make_symlink(from); end
+# if (ARGV[0] == '-h')
+# 	ARGV.shift
+# 	def link(from,to); to.make_link(from); end
+# else
+# 	def link(from,to); to.make_symlink(from); end
+# end
 
 $from = Pathname.new(ARGV.shift)
 $to = Pathname.new(ARGV.shift)

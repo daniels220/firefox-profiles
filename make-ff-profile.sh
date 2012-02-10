@@ -37,7 +37,7 @@ iconv -f utf-16 -t utf-8 <$FF/$info_strings | sed -Ee "/CFBundleName/s/Firefox/F
 
 # Wrap executable
 echo -n '#!/bin/sh
-exec `dirname $0`/firefox'$exec_suffix' -p '$1' -no-remote' > $FF_copy/$exec_file
+exec $(dirname $0)/firefox'$exec_suffix' -p '$1' -no-remote' > $FF_copy/$exec_file
 chmod +x $FF_copy/$exec_file
 
 else for pname in $@; do $0 $pname; done; fi
