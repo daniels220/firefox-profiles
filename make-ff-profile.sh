@@ -7,7 +7,7 @@ if [[ $# == 1 ]]; then
 cd $(dirname $0)
 # Change this line to change output directory
 PREFIX=/Applications
-FF_copy=$PREFIX/Firefox-$1.app
+FF_copy=$PREFIX/Firefox\($1\).app
 # Change this to the location of Firefox.app
 FF=/Applications/Firefox.app
 
